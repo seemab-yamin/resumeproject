@@ -6,21 +6,22 @@
 	<!--meta tags-->
 	<meta charset="utf-8">
 	<meta content="ie=edge" http-equiv="x-ua-compatible">
-	<meta content="portfolio template based on HTML5" name="description">
-	<meta content="onepage, developer, resume, cv, ,personal, portfolio, personal resume, clean, modern"
-		name="keywords">
-	<meta content="Themesio" name="author">
+	<meta content="seemab yamin is a python developer and a research Scholar." name="description">
+	<meta content="web scraper, developer, scholar, researcher" name="keywords">
 	<meta content="width=device-width, initial-scale=1" name="viewport">
 
 	<link rel="icon" href="{% static 'rootapp/images/fav/favicon.ico' %}">
+
 	<!--template title-->
 	<title>Seemab Yamin - Python Developer, Research Scholar</title>
+
 	<!--Font Awesome css-->
 	<link href="{% static 'rootapp/css/font-awesome.min.css' %}" rel="stylesheet">
 	<!--Bootstrap css-->
 	<link href="{% static 'rootapp/css/bootstrap.min.css' %}" rel="stylesheet">
 	<!--Magnific popup css-->
 	<link href="{% static 'rootapp/css/magnific-popup.css' %}" rel="stylesheet">
+
 	<!--Owl carousel css-->
 	<link href="{% static 'rootapp/css/owl.carousel.css' %}" rel="stylesheet">
 	<link href="{% static 'rootapp/css/owl.theme.default.css' %}" rel="stylesheet">
@@ -35,11 +36,6 @@
 </head>
 
 <body>
-	<!--preloader starts-->
-	<!-- <div class="loader_bg">
-		<div class="loader"></div>
-	</div> -->
-	<!--preloader ends-->
 	<!--navigation area starts-->
 	<header class="nav-area navbar-fixed-top">
 		<div class="container">
@@ -49,7 +45,7 @@
 					<div class="main-menu">
 						<div class="navbar navbar-cus">
 							<div class="navbar-header">
-								<a class="navbar-brand" href="#">Seemab<span>.</span></a>
+								<a class="navbar-brand" href="{% url 'root_url' %}">Seemab<span>.</span></a>
 								<button class="navbar-toggle" data-target=".navbar-collapse" data-toggle="collapse"
 									type="button">
 									<span class="sr-only">Toggle navigation</span>
@@ -74,6 +70,10 @@
 											<a class="smooth-menu" href="#portfolio">Portfolio</a>
 										</li>
 										<li>
+											<a class="smooth" href="{% url 'projects_demo_url' %}">Projects
+												Demo</a>
+											</li>
+											<li>
 											<a class="smooth-menu" href="#testimonial">Testimonial</a>
 										</li>
 										<li>
@@ -96,31 +96,32 @@
 				<span id="nav-close" class="text-center"><i class="fa fa-close"></i></span>
 			</div>
 			<div class="canvas-logo">
-				<a href="index.html"><img src="{% static 'rootapp/images/about/sidebar-avatar.jpg' %}"
+				<a href="#"><img src="{% static 'rootapp/images/about/sidebar-avatar.jpg' %}"
 						class="img-fluid img-thumbnail d-block mx-auto avatar" alt="logo"></a>
 			</div>
-			<address>
+			<div>
 				<ul class="list-unstyled">
 					<li>
 						<span>Name</span>
 						<p>Seemab Yamin</p>
 					</li>
-					<li>
+					<!-- TODO Add Resume Download Option -->
+					<!-- <li>
 						<span>Academics</span>
 						<p><a href="#0">Download CV</a></p>
-					</li>
+					</li> -->
 					<li>
 						<span>Skills</span>
-						<p>Python, Django Developer, Research Scholar, HTML/CSS</p>
+						<p>Python, Django Developer, Research Scholar, Data Engineer</p>
 					</li>
 					<li>
 						<span>Email</span>
 						<p><a href="mailto:seemab.y1@gmail.com">seemab.y1@gmail.com</a></p>
 					</li>
-					<li>
+					<!-- <li>
 						<span>Address</span>
-						<p>Remotely</p>
-					</li>
+						<p></p>
+						</li> -->
 					<li>
 						<span>Age</span>
 						<p>24</p>
@@ -131,18 +132,18 @@
 					</li>
 					<li>
 						<span>Phone</span>
-						<p><a href="tel:+86-178-73108500">+86-178-73108500</a></p>
+						<p><a href="tel:+86-178-7310-8500">+86-178-73108500</a></p>
 					</li>
 					<li>
 						<span>Residence</span>
-						<p>China</p>
+						<p>Changsha, China</p>
 					</li>
 					<li>
 						<span>Freelance Status</span>
 						<p>Available</p>
 					</li>
 				</ul>
-			</address>
+			</div>
 			<div class="social-medias">
 				<a href="https://twitter.com/seemab_yamin" target="_blank">
 					<i class="fa fa-twitter"></i>
@@ -175,7 +176,7 @@
 						<div class="row">
 							<div class="col-md-12">
 								<h2>Seemab Yamin</h2>
-								<div class="text-affect">Automation Engineer</div>
+								<div class="text-affect"></div>
 
 								<div class="clearfix"></div>
 								<div class="mouse-icon hidden-sm hidden-xs">
@@ -202,13 +203,12 @@
 					<div class="about-right wow fadeInDown" data-wow-delay="0.8s">
 						<h2><span>About Me</span></h2>
 						<h3><span>Hello, I am Seemab Yamin.</span></h3>
-						<p style="text-align: justify;">I am Seemab, a detail-oriented Python developer, Data Engineer,
-							and Research Scholar who
-							loves solving complex
-							problems.
-							I specialize in Python development, and data management, and have a good learning attitude
-							to be relevant within my
-							field.</p>
+						<p style="text-align: justify;">A detail-oriented Python developer with skills in research and
+							development. I have
+							worked in the domain of Web, Data, Computer Vision, and AI. I enjoy discussing business
+							problems with my clients and
+							providing technical consultation.
+						</p>
 						<div class="about-text-right">
 							<div id="skills">
 								<div class="row">
@@ -398,7 +398,8 @@
 				</div>
 				<div class="col-sm-4 col-md-6 col-lg-4">
 					<div class="gallery-items wow fadeInDown" data-wow-delay="1s">
-						<a class="view img" href="{% static 'rootapp/images/portfolio/4.jpg' %}">
+						<a class="view img"
+							href="https://fiverr-res.cloudinary.com/video/upload/c_limit,f_auto,q_auto,t_smartwm,w_500/g0em4jdgzolsykjh52yq.png">
 							<!--edit image here-->
 							<img alt="portfolio image" src="{% static 'rootapp/images/portfolio/small/4.jpg' %}">
 						</a>
@@ -450,11 +451,11 @@
 									<h4>Senior Developer</h4>
 								</div>
 							</div>
-							</div>
-							<div class="single-testimonial-item">
-								<p>"Very good service provider. Takes the time to understand the problem and does everything
-									necessary to respond to it.
-									I recommend"</p>
+						</div>
+						<div class="single-testimonial-item">
+							<p>"Very good service provider. Takes the time to understand the problem and does everything
+								necessary to respond to it.
+								I recommend"</p>
 							<div class="client-info">
 								<div class="img-box">
 									<img src="https://fiverr-res.cloudinary.com/image/upload/f_auto,q_auto,t_profile_small/v1/attachments/profile/photo/3e2f10696e7c9aa52a3293cf338287cf-1633003907842/92403a92-beb8-48aa-9f40-2f564ec25594.jpg"
@@ -528,84 +529,33 @@
 	<!--contact area starts-->
 	<section class="contact-area section-padding" id="contact">
 		<div class="container">
-			<div class="row">
+			<div class="row justify-content-center">
 				<div class="col-md-6 col-md-offset-3">
 					<div class="section-header">
-						<span>CONTACT</span>
-						<h2>Hire me</h2>
-						<p>If you would like to turn your ideas into reality. Please do reach out to me.</p>
+						<h2>Contact me</h2>
+						<p>Turn your ideas into reality.</p>
 					</div>
 				</div>
 			</div>
-			<div class="row">
+			<div class="row justify-content-center">
 				<div class="col-xs-12 col-sm-12 col-md-4 col-lg-4 left-contact">
-					<div class="address wow fadeInLeft" data-wow-delay="0.2s">
-						<a href="#">
-							<i class="fa-fw fa fa-map-marker"></i>
-							<span>Location</span>
-							<p>Remotely</p>
-						</a>
+					<div class="address wow fadeInRight" data-wow-delay="0.2s">
+						<i class="fa-fw fa fa-envelope-o"></i>
+						<span>Contact on Email</span>
+						<p>seemab.y1@gmail.com</p>
 					</div>
 					<div class="address wow fadeInUp" data-wow-delay="0.2s">
-						<a href="#">
-							<i class="fa-fw fa fa-phone"></i>
-							<span>Give me a call</span>
-							<p>Office: +86-178-73108500</p>
-						</a>
+						<i class="fa-fw fa fa-phone"></i>
+						<span>Give me a call</span>
+						<p>Office: +86-178-7310-8500</p>
 					</div>
-					<div class="address wow fadeInRight" data-wow-delay="0.2s">
-						<a href="#">
-							<i class="fa-fw fa fa-envelope-o"></i>
-							<span>Contact on Email</span>
-							<p>seemab.y1@gmail.com</p>
-						</a>
+					<div class="address wow fadeInLeft" data-wow-delay="0.2s">
+						<i class="fa-fw fa fa-map-marker"></i>
+						<span>Location</span>
+						<p>Remotely</p>
 					</div>
 				</div>
-				<div class="col-xs-12 col-sm-12 col-md-8 col-lg-8 box-contact-form">
-					<form action="#" id="contact-form" method="post" name="contact-form">
-						{% csrf_token %}
-						{{ form.as_p }}
-						<!-- <div class="messages"></div>
-						<div class="controls">
-							<div class="row">
-								<div class="col-md-6">
-									<div class="form-group">
-										<input id="form_name" name="name" placeholder="Enter your full name *"
-											required="required" type="text">
-									</div>
-								</div>
-								<div class="col-md-6">
-									<div class="form-group">
-										<input id="form_email" name="email" placeholder="Enter your email *"
-											required="required" type="email">
-									</div>
-								</div>
-							</div>
-							<div class="row">
-								<div class="col-md-12">
-									<div class="form-group">
-										<textarea id="form_message" name="message" placeholder="Your Message *"
-											required="required" rows="4"></textarea>
-									</div>
-								</div> -->
-						<div class="col-md-12">
-							{% if submitted %}
-							<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 text-center" id="message_submit">
-								<h4 style="color: #f8494c;">We have received your message. We'll reach you out
-									immediately.</h3>
-							</div>
-							{% else %}
-							<button class="btn btn-send" value="" onclick="#foot">Send message</button>
-							<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 text-center" id="message_submit">
-								<h4 style="color: #f8494c;">I am here to provide my best services to you.</h3>
-							</div>
-							{% endif %}
-						</div>
-				</div>
-				</div>
-				</form>
-				</div>
-				</div>
+			</div>
 		</div>
 	</section>
 	<!--contact area ends-->
