@@ -1,0 +1,29 @@
+{% include 'projects_demo/base.html' %}
+
+<!-- Projects List Starts -->
+<div class="container col-sm-8 mt-5 bg-dark rounded">
+    <div class="row d-flex justify-content-center">
+        <h2 class="py-5" style="color: whitesmoke;">
+            <b>
+                Google Maps Scraper Demo
+            </b>
+        </h2>
+    </div>
+</div>
+
+<div class="container col-sm-8 mt-5 bg-dark rounded">
+    <form class="d-flex justify-content-center" method="post">
+        {% csrf_token %}
+        <div class="row">
+            <div class="col-sm">
+                <label for="search_query" style="color: whitesmoke;">Search Query:</label>
+            </div>
+            <div class="col-sm">
+                <input name="search_query" placeholder="Software Houses in Iran" type="text">
+            </div>
+            <div class="col-sm">
+                <input type="submit" value="Run Query">
+            </div>
+        </div>
+    </form>
+</div>

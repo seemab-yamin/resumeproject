@@ -1,0 +1,87 @@
+{% include 'projects_demo/base.html' %}
+
+<!-- Projects List Starts -->
+<div class="container col-sm-8 mt-5 bg-dark rounded">
+    <div class="row d-flex justify-content-center">
+        <h1 class="py-5" style="color: whitesmoke;">
+            <b>
+                Google Maps Scraper Demo
+            </b>
+        </h1>
+    </div>
+</div>
+
+<!-- Go Back Button -->
+<a href="javascript:history.back()"
+    class="btn btn-primary d-flex justify-content-center container col-sm-8 mt-5 rounded">Go Back and Search Again</a>
+<div class="container mt-5 bg-dark rounded">
+    <div class="row d-flex justify-content-center">
+        <h3 class="py-5" style="color: whitesmoke;">
+            Input Query: "{{ search_query }}"
+            {% if file_name %}
+            (<a href="{% url 'download_results_url' file_name %}">Download Results</a>)
+            {% endif %}
+            <div class="w-100">
+                {{ message }}
+            </div>
+            </h3>
+            </div>
+            <div class="row d-flex justify-content-center">
+                {% if file_name %}
+                <div class="container mt-5 bg-dark rounded mt-3" style="color: whitesmoke;">
+                    <div class="table-responsive">
+                        <table class="table table-striped table-bordered table-hover">
+                            <thead>
+                                <tr>
+                                    <th>#</th>
+                                    <th>Name</th>
+                                    <th>Phone Number</th>
+                                    <th>Website</th>
+                                    <th>Address</th>
+                                    <th>Categories</th>
+                                    <th>Country Region</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {% for result in results %}
+                                <tr>
+                                    <td>{{ forloop.counter }}</td>
+                                    <td>{{ result.name }}</td>
+                            <td>{% if result.phone_number %}
+                                {{ result.phone_number }}
+                                {% else %}
+                                N/A.
+                                {% endif %}</td>
+                            <td>
+                                {% if result.website %}
+                                {{ result.website }}
+                                {% else %}
+                                N/A.
+                                {% endif %}</td>
+                            <td>
+                                {% if result.address %}
+                                {{ result.address }}
+                                {% else %}
+                                N/A.
+                                {% endif %}</td>
+                            <td>
+                                {% if result.categories %}
+                                {{ result.categories }}
+                                {% else %}
+                                N/A.
+                                {% endif %}</td>
+                            <td>
+                                {% if result.country_region %}
+                                {{ result.country_region }}
+                                {% else %}
+                                N/A.
+                                {% endif %}</td>
+                            </tr>
+                            {% endfor %}
+                            </tbody>
+                            </table>
+            </div>
+        </div>
+        {% endif %}
+    </div>
+</div>
