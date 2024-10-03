@@ -9,7 +9,7 @@ $(document).ready(function () {
 
     $(function () {
         element.typed({
-            strings: ["Python Engineer.", "Research Scholar."], "Automation Engineer.", "Django Developer.",
+            strings: ["Python Engineer.", "Research Scholar.", "Automation Engineer.", "Django Developer."],
             loop: true,
             typeSpeed: 90
         });
