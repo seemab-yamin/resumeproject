@@ -92,7 +92,7 @@ def parse_response(response, query_string):
     return master_records
 
 
-def get_results(query_string: str) -> list[dict]:
+def get_results(query_string: str) -> list:
     """
     get_results calls make request and on success parse_response.
 
