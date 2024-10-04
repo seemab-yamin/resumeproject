@@ -68,8 +68,10 @@ def google_maps_scraper_demo(request):
                     "name": item["name"],
                     "phone_number": item["phone_number"],
                     "website": item["website"],
-                    "address": ", ".join(item["address"]),
-                    "categories": ", ".join(item["category"]),
+                    "address": ", ".join(item["address"]) if item["address"] else "",
+                    "categories": ", ".join(item["category"])
+                    if item["category"]
+                    else "",
                     "country_region": item["country_county"],
                 }
                 for item in results
