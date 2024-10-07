@@ -50,9 +50,13 @@ def parse_response(response, query_string):
 
     data = json.loads(data)
 
-    new_data = [item for item in data if item]
-    new_data = [item for item in new_data if item[0] == query_string]
-    new_data = new_data[0] if new_data else []
+    try:
+        new_data = [item for item in data if item and (not isinstance(item, int))]
+        new_data = [item for item in new_data if item[0] == query_string]
+        new_data = new_data[0] if new_data else []
+    except Exception as err:
+        print(f"Exception Occurred:new_data parsing:\t{err}")
+        new_data = []
 
     results_data = new_data[1][1:] if new_data else []
 
